@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: poppins;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.form{
+    position: absolute;
+    z-index:10;
+    inset:4px;
+    background-color: black;
+
+}
+.box{
+    position: relative;
+    background-color: black;
+    height:350px;
+    width:300px;
+    overflow: hidden;
+    padding-top: 20px;
+    margin-top: 60px;
+    border-radius: 5px;
+}
+/*animation for background*/
+
+.box::before{
+    position: absolute;
+    content: "";
+    display: block;
+    inset:2px;
+    background-color:#23d5ab;
+    width:100%;
+    height: 100%;
+    top: -50%;
+    left:-50%;
+    transform-origin: bottom right;
+    animation-name: sign;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+    
+}
+@keyframes sign {
+    0%{
+        transform: 
+        rotate(0deg);
+        background-color: #23d5ab;
+    }
+    /*#ee7752, #e73c7e, #23a6d5, #23d5ab*/
+    100%{
+        transform: 
+        rotate(360deg);
+        background-color:  #23a6d5;
+    }
+    
+    
+}
+
+
+h2{
+    padding-left: 65px;
+    color:white;
+    font-size: 20px;
+}
+
+
+.grid{
+    display:grid;
+    grid-template-columns: 2fr;
+    margin: 30px;
+    gap: 20px;
+
+}
+.fa-user{
+
+    color:grey;
+    position:absolute;
+    bottom:220px;
+    right:60px;
+}
+.fa-lock{
+    color:grey;
+    position:absolute;
+    bottom:150px;
+    right:60px;
+}
+.inputs{
+    background-color: transparent;
+    color: #fff;
+    border:1px solid grey;
+    width: 75%;
+    border-radius:3px;
+    outline: none;
+    height:40px;
+    -webkit-transition: 1s;
+    transition: 1s ease-in-out;
+    font-size: 13px;
+    padding-left: 10px;
+}
+.inputs:hover{
+    cursor: pointer;
+    border: 1px solid white;
+    
+}
+input[type=submit]{
+    outline: none;
+    color:white;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab );
+    animation-name: move;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    background-size: 400%  400%;
+    border:none;
+    height:40px;
+    width:75%;
+    border-radius: 3px;
+    cursor: pointer;
+}
+@keyframes move {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 50% 100%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+    
+}
