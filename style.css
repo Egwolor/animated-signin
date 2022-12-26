@@ -9,7 +9,133 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    color:#fff;
+    background-color: #23a6d5;
 }
+.scene{
+    position: relative;
+    top:0;
+    left:0;
+    margin:auto;
+}
+/*STYLING FOR PANDA HEAD*/
+.panda{
+   
+    position:absolute;
+    top:-60px;
+    left:50px;
+    right:0px;
+    margin:auto;
+    z-index: -50;
+    
+    margin:0;
+    padding:0;
+}
+.panda-head{
+    position:relative;
+    display: flex;
+    justify-content:center;
+    background-color: #fff;
+    box-shadow: 0px 0px 19px -5px #043547;
+    width:200px;
+    height:200px;
+    border-radius: 100%;
+}
+.panda-ear {
+    position:absolute;
+    top:-15px;
+    right:125px;
+    content:" ";
+    background-color: #000;
+    width:80px;
+    height:80px;
+    border-radius: 100%;
+    z-index:-1;
+    box-shadow: 0px 0px 19px -5px #043547;
+    border: 15px solid #fff;
+}
+.panda-ear::after{
+    position:absolute;
+        content:" ";
+        left:110px;
+    top:-15px;
+    box-shadow: 0px 0px 19px -5px #043547;
+    background-color: #000;
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    z-index:-1;
+    border: 15px solid #fff;
+    }
+.panda-eye-shade{
+    position: absolute;
+    top: 35px;
+    left:25px;
+    background-color: #000;
+    width: 50px;
+    height: 80px;
+    transform: rotate(220deg);
+    border-radius: 25px / 20px 30px 35px 40px;
+}
+.right{
+    position: absolute;
+    top: 35px;
+    left:125px;
+    background-color: #000;
+    width: 50px;
+    height: 80px;
+    transform: rotate(140deg);
+}
+
+.panda-eye-white{
+    position:absolute;
+    top:70px;
+    left:24px;
+    border-radius: 100%;
+    background-color: #000;
+    width:30px;
+    height:30px;
+    transition:.2s
+}
+
+.panda-eye-white-right{
+    position:absolute;
+    top:70px;
+    left:140px;
+    border-radius: 100%;
+    background-color: #000;
+    width:30px;
+    height:30px;
+    transition: .2s;
+}
+.panda-eye-ball{
+    position:absolute;
+    background-color: #000;
+    top:5px;
+    right:0;
+    width:20px;
+    height:20px;
+    border-radius: 100%;
+    transition:.5s;
+   
+}
+
+
+.panda-nose{
+    position:absolute;
+    background-color: #000;
+    bottom:68px;
+    right:0;
+    left:0;
+    margin:auto;
+    width:35px;
+    height:20px;
+    border-radius: 50px 20px/ 30px 15px;
+    transform: rotate(15deg);
+
+}
+
+
 .form{
     position: absolute;
     z-index:10;
@@ -20,12 +146,15 @@ body{
 .box{
     position: relative;
     background-color: black;
+    top:60px;
     height:350px;
     width:300px;
+    left:0px;
+    right:0px;
+    margin:0;
     overflow: hidden;
-    padding-top: 20px;
-    margin-top: 60px;
     border-radius: 5px;
+    box-shadow: 0px 0px 19px -5px #043547;
 }
 /*animation for background*/
 
@@ -65,51 +194,83 @@ body{
 
 
 h2{
-    padding-left: 65px;
+    position: absolute;
+    margin:auto;
+    top:20px;
+    left:105px;
+    right:0;
     color:white;
     font-size: 20px;
 }
 
 
-.grid{
-    display:grid;
-    grid-template-columns: 2fr;
-    margin: 30px;
-    gap: 20px;
 
-}
-.fa-user{
 
-    color:grey;
-    position:absolute;
-    bottom:220px;
-    right:60px;
-}
-.fa-lock{
-    color:grey;
-    position:absolute;
-    bottom:150px;
-    right:60px;
-}
 .inputs{
+    position: absolute;
     background-color: transparent;
     color: #fff;
     border:1px solid grey;
-    width: 75%;
+    height:50px;
+    width:70%;
     border-radius:3px;
     outline: none;
-    height:40px;
+    left:0;
+    right:0;
+    margin:auto;
     -webkit-transition: 1s;
     transition: 1s ease-in-out;
     font-size: 13px;
-    padding-left: 10px;
 }
 .inputs:hover{
     cursor: pointer;
     border: 1px solid white;
     
 }
+
+.user{
+    padding:10px;
+    top:65px;
+}
+.password{
+    padding:10px;
+    bottom:135px;
+}
+.error-text{
+    position:absolute;
+    color:red;
+    font-size: 11px;
+    margin-top:-25px;
+    margin-left: 45px;
+}
+.fa-regular{
+    position: absolute;
+    cursor:pointer;
+    color:grey;
+}
+.fa-user{
+    right:60px;
+    top:80px;
+}
+.fa-eye-slash {
+    right:60px;
+    bottom:150px;
+    
+}
+
+    
+
+.username-error{
+    top:143px;
+
+}
+.password-error{
+    bottom:115px;
+
+}
 input[type=submit]{
+    bottom:50px;
+    
     outline: none;
     color:white;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab );
@@ -118,10 +279,11 @@ input[type=submit]{
     animation-iteration-count: infinite;
     background-size: 400%  400%;
     border:none;
-    height:40px;
-    width:75%;
+    height:50px;
+    width:70%;
     border-radius: 3px;
     cursor: pointer;
+    top:280px;
 }
 @keyframes move {
     0%{

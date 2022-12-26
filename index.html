@@ -4,26 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" >
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f90bd4c579.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
     <title>Animated signin</title>
 </head>
 <body>
-    <h3></h3>
-    
+   <div class="scene">
+    <div class="panda">
+        <div class="panda-head">
+            <div class="panda-ear"></div>
+            <div class="panda-eye-shade"></div>
+            <div class="panda-eye-white" id="close">
+                <div class="panda-eye-ball" id="down"></div>
+            </div>    
+            <div class="panda-eye-shade right"></div>
+            <div class="panda-eye-white panda-eye-white-right" id="close1">
+                <div class="panda-eye-ball panda-eye-ball-right" id="down1"></div>
+            </div> 
+            <div class="panda-nose"></div>
+               
+        </div>
+    </div>
     <div class="box">
         <div class="form">
-        <h2 class="grid">
+            
+        <h2>
+            
             sign in
         </h2>
-        <form class="signin">
-            <input type="text" name="Username" class="grid inputs" placeholder="username">
-            <i class="fas fa-user"></i>
-            <input type="password" name="password" class="grid inputs" placeholder="password" required minlength="5"><i class="fas fa-lock"></i>
-            <input type="submit" value="Sign in" class="grid">
+        <form class="signin" id="myForm" action="https://egwolor.github.io/News-Home-Page/"  onsubmit=" return submitForm()" method="post">
+            <input type="text" name="Username" class="inputs user" placeholder="username" id="userName" oninput="lookDown()" onmouseover="eyeOpen()">
+            <i class="fa-regular fa-user"  ></i>
+            <p id="message1" class="error-text username-error"></p>
+            <input type="password"  class="inputs password" placeholder="password" id="Mypassword" oninput="closeEye()" onmouseover="eyeOpen()">
+            <p id="message" class="error-text password-error" ></p>
+            <i class="fa-regular fa-eye-slash" onclick="display()"  id="showPassword"></i>
+            <input type="submit" value="Sign in" class="inputs">
         </form>
     </div>
     </div>
+   </div>
     
 </body>
 </html>
